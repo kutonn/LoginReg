@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+            https://cordova.apache.org/docs/en/latest/
+        Some notes:
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/register.css">
+        <title>Register Page</title>
+    </head>
+    <body>
+    <div class="form-container">
+        <h2>Student Information Form</h2>
+        <form action="/submit" method="POST">
+            <div class="section">
+                <h3>Personal Information</h3>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Juan Dela Cruz">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="juandelacruz@example.com">
+
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required pattern="[0-9]{11}" placeholder="09123456789">
+            </div>
+
+            <div class="section">
+                <h3>Student Information</h3>
+                <label for="id-number">School ID Number:</label>
+                <input type="text" id="id-number" name="id-number" required placeholder="2023-12345-MN-0">
+
+                <label for="course">Course:</label>
+                <input type="text" id="course" name="course" required placeholder="Bachelor of Science in -">
+
+                <label for="section">Section:</label>
+                <input type="text" id="section" name="section" required placeholder="BSCOE 4-2P">
+            </div>
+
+            <div class="section">
+                <h3>Complete Address</h3>
+                <label for="region">Region:</label>
+                <select id="region" name="region" required>
+                    <option value="">Select Region</option>
+                    <!-- Regions will be populated by JavaScript -->
+                </select>
+
+                <label for="province">Province:</label>
+                <select id="province" name="province" required disabled>
+                    <option value="">Select Province</option>
+                    <!-- Provinces will be populated by JavaScript -->
+                </select>
+
+                <label for="municipality">Municipality:</label>
+                <select id="municipality" name="municipality" required disabled>
+                    <option value="">Select Municipality</option>
+                    <!-- Municipalities will be populated by JavaScript -->
+                </select>
+
+                <label for="barangay">Barangay:</label>
+                <select id="barangay" name="barangay" required disabled>
+                    <option value="">Select Barangay</option>
+                    <!-- Barangays will be populated by JavaScript -->
+                </select>
+            </div>
+
+            <br><br>
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
+    </body>
+</html>
